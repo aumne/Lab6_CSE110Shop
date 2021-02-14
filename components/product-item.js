@@ -100,7 +100,7 @@ class ProductItem extends HTMLElement {
     const p_price = list_html.children[2];
     const button = list_html.children[3];
 
-    const data = newValue;
+    const data = JSON.parse(newValue);
 
     img_html.setAttribute('src', data.image);
     img_html.setAttribute('alt', data.title);
