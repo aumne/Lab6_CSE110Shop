@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // add all products to product list
   for (let id in product_data) {
     const current_product = document.createElement('product-item');
-    current_product.item = product_data[id].toString();
+    current_product.item = JSON.stringify(product_data[id]);
 
     product_list.appendChild(current_product);
   }
