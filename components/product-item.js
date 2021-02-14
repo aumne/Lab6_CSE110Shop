@@ -116,7 +116,7 @@ class ProductItem extends HTMLElement {
       button.textContent = 'Add to Cart';
     }
     
-    button.setAttribute('onclick', `updateCart.bind(this, ${data.id})`);
+    button.setAttribute('onclick', `this.updateCart.bind(this, ${data.id})`);
   }
 
   static get observedAttributes() {
