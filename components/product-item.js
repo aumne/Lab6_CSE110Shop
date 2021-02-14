@@ -116,7 +116,7 @@ class ProductItem extends HTMLElement {
       button.textContent = 'Add to Cart';
     }
     
-    button.setAttribute('onclick', `updateCart(${button}, ${data.id})`);
+    button.setAttribute('onclick', `updateCart.bind(this)(${data.id})`);
   }
 
   static get observedAttributes() {
@@ -134,9 +134,10 @@ class ProductItem extends HTMLElement {
 
 customElements.define('product-item', ProductItem);
 
-function updateCart(button, id) {
+function updateCart(id) {
   const id_list = JSON.parse(localStorage.getItem('id_list') || '[]');
   let cart_count = parseInt(localStorage.getItem('cart_count'));
+  const button = this.shadowRoot.children[1].children[3]; 
   
   if (id_list.includes(id)) {
     const index = id_list.indexOf(id);
