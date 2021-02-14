@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('cart_count', '0');
   }
   const cart_count_html = document.getElementById('cart-count');
-  cart_count_html.textContent = localStorage.getItem('cart_count'));
+  cart_count_html.textContent = localStorage.getItem('cart_count');
 
   const product_data = JSON.parse(localStorage.getItem('fetch_data') || '[]');
   const product_list = document.getElementById('product-list');
