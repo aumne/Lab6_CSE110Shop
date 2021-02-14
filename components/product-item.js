@@ -91,8 +91,6 @@ class ProductItem extends HTMLElement {
     // create shadow DOM structure
     shadow.append(style, list_html);
     list_html.append(img_html, p_title, p_price, button);
-
-    this.updateCart = this.updateCart.bind(this);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -116,7 +114,7 @@ class ProductItem extends HTMLElement {
     } else {
       button.textContent = 'Add to Cart';
     }
-    button.setAttribute('onclick', `updateCart(${data.id})`);
+      button.setAttribute('onclick', `updateCart.bind(this, ${data.id})`);
   }
 
   static get observedAttributes() {
