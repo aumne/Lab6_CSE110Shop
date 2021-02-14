@@ -137,17 +137,16 @@ customElements.define('product-item', ProductItem);
 function updateCart(id) {
   const id_list = JSON.parse(localStorage.getItem('id_list') || '[]');
   let cart_count = parseInt(localStorage.getItem('cart_count'));
-  const button = this.shadowRoot.children[1].children[3]; 
   
   if (id_list.includes(id)) {
     const index = id_list.indexOf(id);
     id_list.splice(index, 1);
     cart_count--;
-    button.textContent = 'Add to Cart';
+    this.textContent = 'Add to Cart';
   } else {
     id_list.push(id);
     cart_count++;
-    button.textContent = 'Remove from Cart';
+    this.textContent = 'Remove from Cart';
     alert('Added to Cart!');
   }
   localStorage.setItem('id_list', JSON.stringify(id_list));
