@@ -151,4 +151,7 @@ function updateCart(id) {
   }
   localStorage.setItem('id_list', JSON.stringify(id_list));
   localStorage.setItem('cart_count', cart_count.toString());
+  
+  const cart_count_html = document.getElementById('cart-count');
+  cart_count_html.textContent = cart_count.toString();
 }
