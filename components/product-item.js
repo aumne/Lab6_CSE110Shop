@@ -98,6 +98,7 @@ class ProductItem extends HTMLElement {
     const img_html = list_html.children[0];
     const p_title = list_html.children[1];
     const p_price = list_html.children[2];
+    const button = list_html.children[3];
 
     const data = newValue;
 
@@ -114,7 +115,8 @@ class ProductItem extends HTMLElement {
     } else {
       button.textContent = 'Add to Cart';
     }
-      button.setAttribute('onclick', `updateCart.bind(this, ${data.id})`);
+    
+    button.setAttribute('onclick', `updateCart.bind(this, ${data.id})`);
   }
 
   static get observedAttributes() {
